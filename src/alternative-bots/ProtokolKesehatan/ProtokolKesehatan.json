@@ -1,0 +1,14 @@
+{
+    "name": "ProtokolKesehatan",
+    "version": "1.0",
+    "authors": ["Faiz", "Farid", "Syahrul"],
+    "description": "Bot ProtokolKesehatan selalu pergi ke posisi dengan risiko terendah.",
+    "homepage": "",
+    "countryCodes": [
+      "id",
+      "id"
+    ],
+    "platform": ".Net 10.0",
+    "programmingLang": "C# 10.0"
+  }
+  

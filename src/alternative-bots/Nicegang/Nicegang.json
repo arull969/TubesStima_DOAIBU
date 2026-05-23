@@ -1,0 +1,10 @@
+{
+  "name": "Nicegang",
+  "version": "1.0.0",
+  "authors": ["Nicegang Team"],
+  "description": "1v1: radar lock + orbit. Melee: 360 scan + sniper movement.",
+  "gameTypes": ["classic", "melee", "1v1"],
+  "countryCodes": ["ID"],
+  "platform": ".NET 6",
+  "programmingLang": "C# 10"
+}

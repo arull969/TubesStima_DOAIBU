@@ -1,0 +1,10 @@
+{
+  "name": "DOAIBU",
+  "version": "1.0",
+  "authors": ["nguyen"],
+  "description": "",
+  "homepage": "",
+  "countryCodes": [""],
+  "platform": ".Net 10.0",
+  "programmingLang": "C# 10.0"
+}
