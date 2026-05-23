@@ -127,3 +127,100 @@ Penerapan greedy pada proyek ini dilakukan dengan memetakan komponen Robocode Ta
 ├── doc/
 │   └── Laporan TUBES STIMA.pdf
 └── README.md
+```
+
+---
+
+## Dependensi
+
+Sebelum menjalankan program, pastikan perangkat sudah memiliki:
+
+- Java
+- .NET SDK
+- Robocode Tank Royale GUI
+
+---
+
+## Instalasi / Memulai
+
+Clone repository ini dengan perintah berikut.
+
+```bash
+git clone https://github.com/arull969/TubesStima_DOAIBU.git
+cd TubesStima_DOAIBU
+```
+
+---
+
+## Menjalankan Program
+
+1. Pastikan berada pada direktori repository.
+
+2. Jalankan Robocode Tank Royale GUI.
+
+```bash
+java -jar robocode-tankroyale-gui-0.30.0.jar
+```
+
+3. Pada aplikasi Robocode Tank Royale, klik **Config**.
+
+4. Pilih **Bot Root Directories**.
+
+5. Masukkan path folder bot yang ingin dimainkan, misalnya:
+
+```text
+src/DOAIBU
+src/alternative-bots/Nicegang
+src/alternative-bots/Tripanca
+src/alternative-bots/ProtokolKesehatan
+```
+
+6. Klik **Battle**, lalu pilih **Start Battle**.
+
+7. Pilih bot yang ingin dimainkan, kemudian klik **Boot**.
+
+8. Setelah bot muncul pada daftar bawah, pilih bot dan klik **Add**.
+
+9. Klik **Start Battle** untuk memulai pertandingan.
+
+---
+
+## Hasil Pengujian
+
+Pengujian dilakukan sebanyak tiga kali, masing-masing terdiri dari 10 ronde. Berdasarkan hasil pengujian, DOAIBU menjadi bot paling konsisten dan selalu menempati peringkat pertama.
+
+| Bot | Rata-rata Total Score | Rata-rata Survival | Rata-rata Bullet Damage | Total 1sts | Posisi Umum |
+|---|---:|---:|---:|---:|---:|
+| DOAIBU | 2158,67 | 1400,00 | 468,33 | 16 | 1 |
+| ProtokolKesehatan | 1958,00 | 766,67 | 1080,67 | 10 | 2 |
+| Tripanca | 1065,00 | 450,00 | 557,67 | 2 | 3 |
+| Nicegang | 694,67 | 383,33 | 271,33 | 2 | 4 |
+
+DOAIBU menjadi bot terbaik karena mampu menyeimbangkan **risk minimization** dan **score maximization**. Strategi Anti-Gravity, Stop and Go, virtual bullet simulation, radar lock, dan Play It Forward membuat DOAIBU kuat dalam bertahan sekaligus tetap mampu mencetak skor dari tembakan.
+
+---
+
+## Kesimpulan
+
+Robocode Tank Royale dapat dimodelkan sebagai persoalan greedy karena bot harus mengambil keputusan lokal secara cepat pada setiap tick. Keputusan tersebut meliputi movement, targeting, radar scanning, pemilihan firepower, dan pemilihan target.
+
+Berdasarkan pengujian, strategi greedy terbaik bukan hanya strategi yang mengejar damage terbesar, tetapi strategi yang mampu menyeimbangkan keselamatan posisi, peluang menembak, adaptasi terhadap jumlah musuh, dan efisiensi energi. Oleh karena itu, DOAIBU dipilih sebagai bot utama karena memiliki strategi paling adaptif dan stabil dibandingkan bot alternatif lainnya.
+
+---
+
+## Tautan
+
+| Komponen | Link |
+|---|---|
+| Repository GitHub | https://github.com/arull969/TubesStima_DOAIBU |
+| Video Bonus | https://youtube.com/[tautan-video] |
+
+---
+
+## Referensi
+
+- Rinaldi Munir, Algoritma Greedy
+- Robocode Tank Royale Documentation
+- Robocode Tank Royale GitHub
+- Microsoft C# Documentation
+- Microsoft .NET Documentation
