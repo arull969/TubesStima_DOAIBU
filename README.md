@@ -1,124 +1,172 @@
-````md
-<div align="center">
+# Tugas Besar IF25-21013 Strategi Algoritma  
+## Pemanfaatan Algoritma Greedy dalam Pembuatan Bot Permainan Robocode Tank Royale
 
-# 🤖 DOAIBU
+Repository ini berisi implementasi bot **Robocode Tank Royale** yang dikembangkan untuk Tugas Besar IF25-21013 Strategi Algoritma. Fokus utama proyek ini adalah menerapkan strategi algoritma **greedy** dalam pengambilan keputusan bot secara real-time, terutama pada aspek movement, targeting, radar scanning, pemilihan target, dan penentuan firepower.
 
-### Greedy-Based Robocode Tank Royale Bot
-
-**Tugas Besar IF25-21013 Strategi Algoritma**
-
-<img src="https://img.shields.io/badge/C%23-.NET%2010-purple?style=for-the-badge">
-<img src="https://img.shields.io/badge/Robocode-Tank%20Royale-red?style=for-the-badge">
-<img src="https://img.shields.io/badge/Algorithm-Greedy-blue?style=for-the-badge">
-<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
-
-</div>
+Bot utama yang dikembangkan adalah **DOAIBU**, sedangkan bot alternatif yang digunakan sebagai pembanding strategi adalah **Nicegang**, **Tripanca**, dan **ProtokolKesehatan**.
 
 ---
 
-## 🚀 Overview
+## Anggota Kelompok
 
-**DOAIBU** adalah bot utama Robocode Tank Royale yang menerapkan strategi **Greedy Algorithm** untuk mengambil keputusan secara cepat pada setiap tick pertandingan.
-
-Bot ini berfokus pada keseimbangan antara:
-
-`survival` · `targeting` · `movement` · `radar lock` · `firepower` · `risk minimization`
-
----
-
-## 🧩 Bot Lineup
-
-| Bot | Tipe Strategi | Fokus Utama |
-|---|---|---|
-| 🤖 **DOAIBU** | Adaptive Greedy | Survival + scoring seimbang |
-| 🔥 **Nicegang** | Aggressive Greedy | Serangan agresif dan finishing |
-| 🎯 **Tripanca** | Balanced Greedy | Firepower efisien dan jarak ideal |
-| 🛡️ **ProtokolKesehatan** | Risk-Minimizing Greedy | Posisi aman dan survival |
-
----
-
-## ✨ Core Features
-
-| Area | Implementasi |
+| NIM | Nama |
 |---|---|
-| Movement | Anti-Gravity, Stop and Go |
-| Targeting | Play It Forward Prediction |
-| Radar | Radar Lock System |
-| Defense | Virtual Bullet Simulation |
-| Fire Control | Dynamic Firepower |
-| Decision Making | Greedy Heuristic Evaluation |
-
----
-
-## 🧠 Greedy Flow
-
-```text
-Enemy Scan
-    ↓
-Risk Evaluation
-    ↓
-Best Local Decision
-    ↓
-Movement / Targeting / Firepower
-    ↓
-Action Execution
-````
-
----
-
-## 👨‍💻 Team
-
-| NIM       | Nama                 |
-| --------- | -------------------- |
-| 124140096 | Syahrul Afwan        |
+| 124140096 | Syahrul Afwan |
 | 124140144 | Muhammad Faiz Ashfaq |
-| 124140210 | Farid Rizky Fauzan   |
+| 124140210 | Farid Rizky Fauzan |
 
-**Dosen Pengampu:** Winda Yulita, M.Cs.
+Dosen Pengampu: **Winda Yulita, M.Cs.**
 
 ---
 
-## 📂 Project Structure
+## Deskripsi Singkat
+
+Robocode Tank Royale adalah permainan pemrograman yang menempatkan pemain sebagai pengembang logika bot tank virtual. Bot tidak dikendalikan secara langsung, tetapi bergerak berdasarkan program yang dibuat. Setiap bot harus mampu bergerak, memindai musuh, mengarahkan radar, mengarahkan gun, menembak, menghindari peluru, serta bertahan hingga akhir pertandingan.
+
+Permasalahan pada Robocode Tank Royale cocok dimodelkan dengan strategi greedy karena bot harus mengambil keputusan secara cepat pada setiap tick berdasarkan informasi lokal yang tersedia saat itu. Keputusan yang dipilih tidak selalu menjamin solusi global paling optimal, tetapi diharapkan mampu menghasilkan skor tinggi melalui kombinasi **risk minimization** dan **score maximization**.
+
+---
+
+## Bot yang Dikembangkan
+
+### 1. DOAIBU — Main Bot
+
+**DOAIBU** merupakan bot utama dengan pendekatan **adaptive risk-minimizing greedy**. Bot ini menggabungkan beberapa strategi utama:
+
+- Anti-Gravity Movement
+- Stop and Go
+- Virtual Bullet Simulation
+- Radar Lock
+- Play It Forward Targeting
+
+Strategi movement DOAIBU menyesuaikan kondisi pertandingan. Pada kondisi satu lawan satu, bot dapat menggunakan Stop and Go untuk menghindari tembakan sederhana. Pada kondisi banyak musuh, DOAIBU menggunakan Anti-Gravity untuk memilih posisi dengan risiko paling rendah.
+
+Targeting DOAIBU menggunakan **Play It Forward**, yaitu prediksi posisi musuh berdasarkan riwayat state seperti angular velocity, speed, dan acceleration. Dengan strategi ini, DOAIBU tidak hanya menembak posisi musuh saat ini, tetapi memperkirakan posisi musuh ketika peluru sampai.
+
+---
+
+### 2. Nicegang — Alternative Bot
+
+**Nicegang** menggunakan pendekatan **aggressive controlled greedy**. Bot ini dirancang lebih agresif, tetapi tetap memiliki mekanisme pengamanan.
+
+Strategi utama Nicegang:
+
+- Escape opening pada awal ronde
+- Wall escape ketika terlalu dekat dinding
+- Bullet dodge berdasarkan virtual bullet
+- Sniper orbit pada kondisi 1v1
+- Ram mode ketika musuh memiliki energi rendah
+- Patrol movement pada melee battle
+- Iterative linear prediction untuk targeting
+
+Nicegang memilih target menggunakan fungsi scoring berdasarkan energi musuh, jarak, dan damage yang sudah diberikan. Bot ini kuat dalam situasi duel dan finishing target lemah, tetapi memiliki risiko tinggi jika terlalu agresif pada kondisi arena yang masih ramai.
+
+---
+
+### 3. Tripanca — Alternative Bot
+
+**Tripanca** merupakan bot dengan pendekatan **balanced greedy**. Bot ini memodifikasi pola DOAIBU dengan penekanan pada efisiensi firepower dan pengaturan jarak ideal.
+
+Strategi utama Tripanca:
+
+- Anti-Gravity Movement
+- Play It Forward Targeting
+- Fire control greedy
+- Pengaturan jarak ideal terhadap musuh
+- Predator mode terhadap musuh berenergi rendah
+- Penalti terhadap lintasan peluru dan dinding
+
+Tripanca tidak selalu menggunakan firepower maksimum. Bot menghitung daya tembak berdasarkan jarak target, energi musuh, dan energi sendiri agar tembakan tetap efisien serta tidak mengorbankan survival.
+
+---
+
+### 4. ProtokolKesehatan — Alternative Bot
+
+**ProtokolKesehatan** menggunakan strategi **risk-minimizing greedy** yang berfokus pada pemilihan posisi aman.
+
+Strategi utama ProtokolKesehatan:
+
+- Evaluasi 200 kandidat posisi
+- Pemilihan posisi dengan risiko minimum
+- Safe area checking
+- Head-on targeting
+- Firepower adaptif berdasarkan jumlah musuh hidup
+
+Bot ini memilih posisi berdasarkan fungsi `EvaluatePosition`, yaitu dengan mempertimbangkan jarak terhadap musuh, energi musuh, sudut posisi, dan posisi sebelumnya. ProtokolKesehatan kuat dalam survival dan menghindari kerumunan, tetapi akurasi tembakannya lebih rendah karena menggunakan head-on targeting.
+
+---
+
+## Penerapan Strategi Greedy
+
+Penerapan greedy pada proyek ini dilakukan dengan memetakan komponen Robocode Tank Royale ke elemen greedy berikut.
+
+| Elemen Greedy | Penerapan pada Robocode Tank Royale |
+|---|---|
+| Himpunan Kandidat | Aksi movement, target, kandidat posisi, arah radar, metode targeting, dan firepower |
+| Himpunan Solusi | Rangkaian aksi yang sudah dieksekusi bot selama pertandingan |
+| Fungsi Seleksi | Memilih kandidat terbaik berdasarkan nilai heuristik |
+| Fungsi Kelayakan | Memastikan posisi valid, target hidup, gun heat nol, dan firepower legal |
+| Fungsi Objektif | Memaksimalkan skor akhir dan meminimalkan kehilangan energi |
+| Heuristic Value | Risiko posisi, peluang hit, jarak ideal, energi musuh, lintasan peluru, dan keamanan posisi |
+
+---
+
+## Struktur Program
 
 ```text
-TubesStima_DOAIBU
-├── src
-│   ├── DOAIBU
-│   └── alternative-bots
-│       ├── Nicegang
-│       ├── Tripanca
-│       └── ProtokolKesehatan
-├── doc
+├── src/
+│   ├── DOAIBU/
+│   │   └── ...
+│   └── alternative-bots/
+│       ├── Nicegang/
+│       │   └── ...
+│       ├── Tripanca/
+│       │   └── ...
+│       └── ProtokolKesehatan/
+│           └── ...
+├── doc/
 │   └── Laporan TUBES STIMA.pdf
 └── README.md
 ```
 
 ---
 
-## ⚙️ Requirements
+## Dependensi
 
-* Java
-* .NET SDK
-* Robocode Tank Royale GUI
+Sebelum menjalankan program, pastikan perangkat sudah memiliki:
+
+- Java
+- .NET SDK
+- Robocode Tank Royale GUI
 
 ---
 
-## ▶️ How to Run
+## Instalasi / Memulai
 
-Clone repository:
+Clone repository ini dengan perintah berikut.
 
 ```bash
 git clone https://github.com/arull969/TubesStima_DOAIBU.git
 cd TubesStima_DOAIBU
 ```
 
-Jalankan Robocode GUI:
+---
+
+## Menjalankan Program
+
+1. Pastikan berada pada direktori repository.
+
+2. Jalankan Robocode Tank Royale GUI.
 
 ```bash
 java -jar robocode-tankroyale-gui-0.30.0.jar
 ```
 
-Tambahkan bot directory:
+3. Pada aplikasi Robocode Tank Royale, klik **Config**.
+
+4. Pilih **Bot Root Directories**.
+
+5. Masukkan path folder bot yang ingin dimainkan, misalnya:
 
 ```text
 src/DOAIBU
@@ -127,37 +175,52 @@ src/alternative-bots/Tripanca
 src/alternative-bots/ProtokolKesehatan
 ```
 
-Lalu buka:
+6. Klik **Battle**, lalu pilih **Start Battle**.
 
-```text
-Battle → Start Battle → Boot Bot → Add Bot → Start
-```
+7. Pilih bot yang ingin dimainkan, kemudian klik **Boot**.
 
----
+8. Setelah bot muncul pada daftar bawah, pilih bot dan klik **Add**.
 
-## 📊 Testing Result
-
-| Rank | Bot               | Avg Score |
-| ---- | ----------------- | --------: |
-| 🥇   | DOAIBU            |   2158.67 |
-| 🥈   | ProtokolKesehatan |   1958.00 |
-| 🥉   | Tripanca          |   1065.00 |
-| ⭐    | Nicegang          |    694.67 |
+9. Klik **Start Battle** untuk memulai pertandingan.
 
 ---
 
-## 🔗 Links
+## Hasil Pengujian
 
-| Component   | Link                                          |
-| ----------- | --------------------------------------------- |
-| Repository  | https://github.com/arull969/TubesStima_DOAIBU |
-| Video Bonus | https://youtu.be/5gjnGg4iJfQ                  |
+Pengujian dilakukan sebanyak tiga kali, masing-masing terdiri dari 10 ronde. Berdasarkan hasil pengujian, DOAIBU menjadi bot paling konsisten dan selalu menempati peringkat pertama.
+
+| Bot | Rata-rata Total Score | Rata-rata Survival | Rata-rata Bullet Damage | Total 1sts | Posisi Umum |
+|---|---:|---:|---:|---:|---:|
+| DOAIBU | 2158,67 | 1400,00 | 468,33 | 16 | 1 |
+| ProtokolKesehatan | 1958,00 | 766,67 | 1080,67 | 10 | 2 |
+| Tripanca | 1065,00 | 450,00 | 557,67 | 2 | 3 |
+| Nicegang | 694,67 | 383,33 | 271,33 | 2 | 4 |
+
+DOAIBU menjadi bot terbaik karena mampu menyeimbangkan **risk minimization** dan **score maximization**. Strategi Anti-Gravity, Stop and Go, virtual bullet simulation, radar lock, dan Play It Forward membuat DOAIBU kuat dalam bertahan sekaligus tetap mampu mencetak skor dari tembakan.
 
 ---
 
-<div align="center">
+## Kesimpulan
 
-### Made with ☕, C#, and Greedy Strategy
+Robocode Tank Royale dapat dimodelkan sebagai persoalan greedy karena bot harus mengambil keputusan lokal secara cepat pada setiap tick. Keputusan tersebut meliputi movement, targeting, radar scanning, pemilihan firepower, dan pemilihan target.
 
-</div>
-```
+Berdasarkan pengujian, strategi greedy terbaik bukan hanya strategi yang mengejar damage terbesar, tetapi strategi yang mampu menyeimbangkan keselamatan posisi, peluang menembak, adaptasi terhadap jumlah musuh, dan efisiensi energi. Oleh karena itu, DOAIBU dipilih sebagai bot utama karena memiliki strategi paling adaptif dan stabil dibandingkan bot alternatif lainnya.
+
+---
+
+## Tautan
+
+| Komponen | Link |
+|---|---|
+| Repository GitHub | https://github.com/arull969/TubesStima_DOAIBU |
+| Video Bonus | https://youtu.be/5gjnGg4iJfQ |
+
+---
+
+## Referensi
+
+- Rinaldi Munir, Algoritma Greedy
+- Robocode Tank Royale Documentation
+- Robocode Tank Royale GitHub
+- Microsoft C# Documentation
+- Microsoft .NET Documentation
