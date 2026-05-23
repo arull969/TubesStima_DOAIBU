@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "TvULD0JHQ6Q=",
+  "success": true,
+  "projectFilePath": "/Users/muhammadfaizashfaq/Documents/Semester 4/Tubes STIMA/tubes1-if2211-starter-pack-1.0/sample-bots-csharp-0.30.0/Tripanca/Tripanca.csproj",
+  "expectedPackageFiles": [
+    "/Users/muhammadfaizashfaq/.nuget/packages/jetbrains.annotations/2025.2.4/jetbrains.annotations.2025.2.4.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.configuration/10.0.0/microsoft.extensions.configuration.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0/microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.configuration.binder/10.0.0/microsoft.extensions.configuration.binder.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.configuration.fileextensions/10.0.0/microsoft.extensions.configuration.fileextensions.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.configuration.json/10.0.0/microsoft.extensions.configuration.json.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.fileproviders.abstractions/10.0.0/microsoft.extensions.fileproviders.abstractions.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.fileproviders.physical/10.0.0/microsoft.extensions.fileproviders.physical.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.filesystemglobbing/10.0.0/microsoft.extensions.filesystemglobbing.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/microsoft.extensions.primitives/10.0.0/microsoft.extensions.primitives.10.0.0.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/newtonsoft.json/13.0.4/newtonsoft.json.13.0.4.nupkg.sha512",
+    "/Users/muhammadfaizashfaq/.nuget/packages/robocode.tankroyale.botapi/0.41.0/robocode.tankroyale.botapi.0.41.0.nupkg.sha512"
+  ],
+  "logs": []
+}

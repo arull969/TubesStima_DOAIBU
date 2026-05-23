@@ -1,0 +1,10 @@
+{
+  "name": "Tripanca",
+  "version": "1.0",
+  "authors": ["Faiz", "Farid", "Syahrul"],
+  "description": "Bot Tripanca jos-jis abiez",
+  "homepage": "",
+  "countryCodes": [""],
+  "platform": ".Net 10.0",
+  "programmingLang": "C# 10.0"
+}
