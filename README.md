@@ -213,7 +213,7 @@ Berdasarkan pengujian, strategi greedy terbaik bukan hanya strategi yang mengeja
 | Komponen | Link |
 |---|---|
 | Repository GitHub | https://github.com/arull969/TubesStima_DOAIBU |
-| Video Bonus | https://youtube.com/[tautan-video] |
+| Video Bonus | https://youtube.com/https://youtu.be/5gjnGg4iJfQ |
 
 ---
 
