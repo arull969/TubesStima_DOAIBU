@@ -1,7 +1,7 @@
 {
   "name": "Nicegang",
   "version": "1.0.0",
-  "authors": ["Nicegang Team"],
+  "authors": ["Faiz", "Farid", "Syahrul"],
   "description": "1v1: radar lock + orbit. Melee: 360 scan + sniper movement.",
   "gameTypes": ["classic", "melee", "1v1"],
   "countryCodes": ["ID"],
